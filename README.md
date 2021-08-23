@@ -6,13 +6,13 @@ ChangeLog
 Version 0.1:
 
 Mostly leveraged from tutorial
-  Created a rooms.js file to display rooms.
-  script.js includes movement between rooms. 
-  html / css includes rudimentary functionality for proof of concept. 
+  *Created a rooms.js file to display rooms.
+  *script.js includes movement between rooms. 
+  *html / css includes rudimentary functionality for proof of concept. 
 
 Future release plans: 
-  Plan to draw map and create rooms, descriptions that are original. 
-  Would like to add - items, monsters, and include a monetary system.
+  *Plan to draw map and create rooms, descriptions that are original. 
+  *Would like to add - items, monsters, and include a monetary system.
   
   I'm interested in learning how complex this would be as multiplayer (simple version of a MUD?)
 
