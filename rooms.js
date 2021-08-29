@@ -10,19 +10,24 @@ var rooms = {
     "clearing1": {
         "description": "You arrive at a clearing and you see a lighthouse to the <b>north</b>\
         and there is a strange smell coming from the <b>east</b>",
-            "directions": {
+        "directions": {
             "south": "start",
             "north": "lighthouse",
             "east": "trolls"
         }
     },
+    
     "lighthouse": {
-        "description": "You arrive at the lighthouse and walk up to the North. A strange old lady\
-        opens the door. What do you do?",
+        "description": "You arrive at the lighthouse and walk up to the North. What do you do?",
+            "character": {
+                "description": "old lady. Something smells -- musty."
+            },
         "directions": {
             "south": "clearing1"
-        }
+            },
+ 
     },
+
     "trolls": {
         "description": "You arrive at a clearing and there are some trolls",
         "directions": {
@@ -41,5 +46,7 @@ var rooms = {
         "directions": {
             "east": "bridge1"
         } 
-    }
+    },
+
+
 }

@@ -1,39 +1,67 @@
 var currentRoom = "start";
+var commands = ["go", "pick up", "look", "talk"];
+var inventory = [];
 
 function changeRoom(dir) {
     if(rooms[currentRoom].directions[dir] !== undefined) {
-        currentRoom = rooms[currentRoom].directions[dir];
+        currentRoom = rooms[currentRoom].directions[dir]
         $('#game-text').append("<p>" + rooms[currentRoom].description + "</p>");
     } else {
         $('#game-text').append("<p>Looks like you are unable to move in that direction.</p>");
     }
-
 }
 
+function showHelp() {
+    $('#game-text').append("</p>Here are the possible commands: </p>");
+    $('#game-text').append("<p><ul>");
+        for(var i = 0; i < commands.length; i++) {
+            $('#game-text').append("<li>" + commands[i] + "</li>");            
+        
+        }
+        $('#game-text').append("</ul></p>");
+}
+
+function showInventory() {
+    if(inventory.length === 0) {
+        $('#game-text').append("<p>Your pockets are empty.<p>");
+        return;
+    }
+    $('#game-text').append("</p>You are currently carrying: </p>");
+    $('#game-text').append("<p><ul>");
+    for(var i = 0; i < inventory.length; i++) {
+        $('#game-text').append("<li>" + inventory[i] + "</li>");
+    }
+    $('#game-text').append("</ul></p>");
+}
+
+
+
+function playerInput(input) {
+    var command = input.split(" ")[0];
+    switch (command) {
+        case "go":
+            var dir = input.split(" ")[1];
+            changeRoom(dir);
+            break;
+        case "help":
+            showHelp();
+            break;
+        case "inventory":
+            showInventory();
+            break;
+        default:
+            $('#game-text').append("<p>Invalid Command. Type 'help' for commands.</p>");
+    }
+}
 
 $(document).ready(function() {
     $('#game-text').append("<p>" + rooms.start.description + "</p>");
 
-    $(document).keypress(function(key){
+    $(document).keypress(function(key) {
         if(key.which === 13 && $('#user-input').is(':focus')) {
             var value = $('#user-input').val().toLowerCase();
-            switch(value) {
-                case "north":
-                    changeRoom("north");
-                    break;
-                case "south":
-                    changeRoom("south");
-                    break;
-                case "east":
-                    changeRoom("east");
-                    break;
-                case "west":
-                    changeRoom("west");
-                    break;
-                default:
-                    alert("You can't go there!");
-
-            }
+            $('#user-input').val("");
+            playerInput(value);
         }
     })
 
