@@ -2,7 +2,12 @@
 
 Text adventure game I am building upon from a <a href="https://www.youtube.com/channel/UCXHPLNOp6DXvkoQMSazj8Pg">EZ Mode Code</a> using js and jquery. 
 
-ChangeLog
+**ChangeLog**
+
+Version 0.2: 
+
+Go + navigation; text box clears after each command, help menu, inventory function begin. 
+
 Version 0.1:
 
 Mostly leveraged from tutorial
@@ -17,3 +22,5 @@ Future release plans:
   I'm interested in learning how complex this would be as multiplayer (simple version of a MUD?)
 
 I am working on learning basic troubleshooting skills and realizing basic concepts of the javascript language. Please be kind!  If you have tips, resources, suggestions, etc. please feel free to reach out! 
+
+
