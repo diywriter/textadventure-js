@@ -2,6 +2,7 @@ var currentRoom = "start";
 var commands = ["go", "pick up", "look", "talk"];
 var inventory = [];
 
+// room movement
 function changeRoom(dir) {
     if(rooms[currentRoom].directions[dir] !== undefined) {
         currentRoom = rooms[currentRoom].directions[dir]
@@ -11,6 +12,16 @@ function changeRoom(dir) {
     }
 }
 
+// look command
+function seeRoom() {
+    if (rooms[currentRoom].character.name !== null) {
+        $('#game-text').append("<p>You move your head around the " + rooms[currentRoom].name + " and see " + rooms[currentRoom].character.name + ".</p>");
+    } else {
+        $('#game-text').append("<p>Nothing to see here.</p>");
+    }
+}
+
+// help command
 function showHelp() {
     $('#game-text').append("</p>Here are the possible commands: </p>");
     $('#game-text').append("<p><ul>");
@@ -21,6 +32,7 @@ function showHelp() {
         $('#game-text').append("</ul></p>");
 }
 
+// check person's inventory
 function showInventory() {
     if(inventory.length === 0) {
         $('#game-text').append("<p>Your pockets are empty.<p>");
@@ -34,8 +46,7 @@ function showInventory() {
     $('#game-text').append("</ul></p>");
 }
 
-
-
+// defining commands in text box
 function playerInput(input) {
     var command = input.split(" ")[0];
     switch (command) {
@@ -46,6 +57,9 @@ function playerInput(input) {
         case "help":
             showHelp();
             break;
+        case "look":
+            seeRoom();
+            break;
         case "inventory":
             showInventory();
             break;
@@ -53,6 +67,7 @@ function playerInput(input) {
             $('#game-text').append("<p>Invalid Command. Type 'help' for commands.</p>");
     }
 }
+
 
 $(document).ready(function() {
     $('#game-text').append("<p>" + rooms.start.description + "</p>");

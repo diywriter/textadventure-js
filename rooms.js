@@ -1,5 +1,6 @@
 var rooms = {
     "start": {
+        "name": "start",
         "description": "You are in a dark, cold place and you see a light to the <b>north</b>\
         and you hear the sound of running water to the <b>west</b>",
         "directions": {
@@ -8,6 +9,7 @@ var rooms = {
         }
     },
     "clearing1": {
+        "name": "clearing1",
         "description": "You arrive at a clearing and you see a lighthouse to the <b>north</b>\
         and there is a strange smell coming from the <b>east</b>",
         "directions": {
@@ -18,9 +20,12 @@ var rooms = {
     },
     
     "lighthouse": {
+        "name": "lighthouse",
         "description": "You arrive at the lighthouse and walk up to the North. What do you do?",
             "character": {
-                "description": "old lady. Something smells -- musty."
+                "name": "an old lady",
+                "description": "Something smells -- musty.",
+                "dialogue": ["Hello", "I have a quest for you"]
             },
         "directions": {
             "south": "clearing1"
@@ -29,12 +34,14 @@ var rooms = {
     },
 
     "trolls": {
+        "name": "trolls",
         "description": "You arrive at a clearing and there are some trolls",
         "directions": {
             "west": "clearing1"
         }
     },
     "bridge1": {
+        "name": "bridge1",
         "description": "You arrive at a clearing. There is a bridge to the <b>west</b>",
         "directions": {
             "east": "start",
@@ -42,6 +49,7 @@ var rooms = {
         }
     },
     "bridge2": {
+        "name": "bridge2",
         "description": "You try to cross the bridge but a troll jumps out and tries to bite you.",
         "directions": {
             "east": "bridge1"
