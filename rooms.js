@@ -18,21 +18,24 @@ var rooms = {
             "east": "trolls"
         }
     },
-    
+
     "lighthouse": {
         "name": "lighthouse",
         "description": "You arrive at the lighthouse and walk up to the North. What do you do?",
-            "character": {
-                "name": "an old lady",
-                "description": "Something smells -- musty.",
-                "dialogue": ["Hello", "I have a quest for you"]
-            },
+        "character": {
+            "name": "an old lady",
+            "description": "Something smells -- musty.",
+            "dialogue": ["Hello", "I have a quest for you"]
+        },
         "directions": {
             "south": "clearing1"
-            },
- 
+        },
+        "item": {
+            "name": "a shiny rock",
+            "description": "this rock is so shiny that it feels smooth to the touch"
+        },
     },
-
+ 
     "trolls": {
         "name": "trolls",
         "description": "You arrive at a clearing and there are some trolls",
@@ -40,6 +43,7 @@ var rooms = {
             "west": "clearing1"
         }
     },
+
     "bridge1": {
         "name": "bridge1",
         "description": "You arrive at a clearing. There is a bridge to the <b>west</b>",

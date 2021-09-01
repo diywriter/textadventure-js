@@ -14,10 +14,10 @@ function changeRoom(dir) {
 
 // look command
 function seeRoom() {
-    if (rooms[currentRoom].character.name !== null) {
-        $('#game-text').append("<p>You move your head around the " + rooms[currentRoom].name + " and see " + rooms[currentRoom].character.name + ".</p>");
+    if (rooms[currentRoom].character || rooms[currentRoom].item !== undefined) {
+        $('#game-text').append("<p>You move your head around the room and see " + rooms[currentRoom].character.name + " and " + rooms[currentRoom].item.name + "<br>");
     } else {
-        $('#game-text').append("<p>Nothing to see here.</p>");
+        $('#game-text').append("<p>You don't see anything special.</p>");
     }
 }
 
