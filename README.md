@@ -1,12 +1,31 @@
 # textadventure-js
 
-Text adventure game I am building upon from a <a href="https://www.youtube.com/channel/UCXHPLNOp6DXvkoQMSazj8Pg">EZ Mode Code</a> using js and jquery. 
+I am working on building a text adventure game using javascript (and jquery). Leveraging a tutorial made by <a href="https://github.com/stevegwh">stevegwh</a>. Please check out his <a href="https://www.youtube.com/channel/UCXHPLNOp6DXvkoQMSazj8Pg">YouTube channel</a> to help achieve your coding -- erhm -- dreams? 
+
+I am pretty new at this. If you have comments or feedback I'd appreciate you taking the time to share your thoughts. 
 
 **ChangeLog**
+
+Version 0.3:
+
+building on what I've learned from the tutorial by adding new-to-me concepts:
+ - look functionality
+ - nesting item and character objects in "rooms." 
+
+- learning for me:
+   - nested objects with multiple layers was getting a bit tricky to understand complex indenting syntax.
+   
+- future state plan: 
+ - aiming to add the ability to randomly choose a pre-defined character phrase when using a future talk command for a bit of realism. 
+ - pick up function including transferring an item from the room to the player
+ - monsters and hp
+ - currency and spending currency on items
+
 
 Version 0.2: 
 
 Go + navigation; text box clears after each command, help menu, inventory function begin. 
+
 
 Version 0.1:
 
