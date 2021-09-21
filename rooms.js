@@ -23,15 +23,15 @@ var rooms = {
         "name": "lighthouse",
         "description": "You arrive at the lighthouse and walk up to the North. What do you do?",
         "character": {
-            "name": "an old lady",
+            "name": "lady",
             "description": "Something smells -- musty.",
-            "dialogue": ["Hello", "I have a quest for you"]
+            "dialogue": ["Hello, I have a quest for you"]
         },
         "directions": {
             "south": "clearing1"
         },
         "item": {
-            "name": "a shiny rock",
+            "name": "rock",
             "description": "this rock is so shiny that it feels smooth to the touch"
         },
     },
