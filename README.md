@@ -6,6 +6,18 @@ I am pretty new at this. If you have comments or feedback I'd appreciate you tak
 
 **ChangeLog**
 
+Version 0.4:
+
+Pickup command
+- Bugs: not yet with pickup item recognized. pickup command currently looks for an item in room and picks it up. 
+- 
+Add a picked up item to inventory (or my pockets so to speak)
+
+Talk command 
+- Bugs: not yet talk person recognized 
+
+
+
 Version 0.3:
 
 building on what I've learned from the tutorial by adding new-to-me concepts:
