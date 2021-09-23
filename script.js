@@ -46,10 +46,27 @@ function showHelp() {
 
 // pick up an item and put in inventory
 function pickup(npc) {
-    if (rooms[currentRoom].item !== undefined) {
-        inventory.push(rooms[currentRoom].item.name)
-        $('#game-text').append("<p>You pick up a " + inventory + ". " + rooms[currentRoom].item.description + "</p>");
-        $('#game-text').append("<p>You put the " + inventory + " in your pocket." + "</p>");
+    // if (rooms[currentRoom].item !== undefined) {
+    //     inventory.push(rooms[currentRoom].item.name)
+    //     $('#game-text').append("<p>You pick up a " + inventory + ". " + rooms[currentRoom].item.description + "</p>");
+    //     $('#game-text').append("<p>You put the " + inventory + " in your pocket." + "</p>");
+    let itemsInRoom = rooms[currentRoom].items;
+    if(itemsInRoom && itemsInRoom.length > 0){
+        itemsInRoom.map(item => {
+            if(item.name === npc){
+                if(item.pickedUp === false){
+                    inventory.push(item);
+                    item.pickedUp = true;
+                    $('#game-text').append("<p>You pick up a " + item.name + "</p>");
+                    $('#game-text').append("<p>You put the " + item.name + " in your pocket." + "</p>");
+
+                }
+                else{
+                    $('#game-text').append("<p>You already picked up that item!</p>");
+                }
+                
+            }
+        })
     } else {
         $('#game-text').append("<p>Try again.</p>");
     }
@@ -88,7 +105,8 @@ function playerInput(input) {
             talk(npc);
             break;
         case "pickup":
-            pickup();
+            var item = input.split(" ")[1];
+            pickup(item);
             break;
         case "inventory":
             showInventory();

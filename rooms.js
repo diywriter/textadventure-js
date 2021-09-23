@@ -34,6 +34,9 @@ var rooms = {
             "name": "rock",
             "description": "this rock is so shiny that it feels smooth to the touch"
         },
+        "items":[
+            {"name": "rock", "description": "this rock is so shiny that it feels smooth to the touch", "pickedUp": false}
+        ]
     },
  
     "trolls": {
